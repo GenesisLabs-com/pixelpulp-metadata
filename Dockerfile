@@ -1,10 +1,10 @@
 FROM node:18.5-slim as dependencies
-WORKDIR /pixelpulp-metadata
+WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 FROM node:18.5-slim as builder
-WORKDIR /pixelpulp-metadata
+WORKDIR /app
 COPY . .
 COPY --from=dependencies /metadata/node_modules ./node_modules
 RUN yarn build
