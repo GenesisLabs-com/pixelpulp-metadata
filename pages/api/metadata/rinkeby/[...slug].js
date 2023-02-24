@@ -3,7 +3,7 @@ const axios = require("axios");
 async function getTokens(url) {
   return axios
     .get(url, {
-      headers: { "X-API-KEY": String(process.env.OPENSEA_API_KEY).trim() },
+      headers: process.env.NEXT_PUBLIC_CHAIN_ID == '5' ? {} : { "X-API-KEY": String(process.env.OPENSEA_API_KEY).trim() },
     })
     .then((response) => {
       if (!response.data) {

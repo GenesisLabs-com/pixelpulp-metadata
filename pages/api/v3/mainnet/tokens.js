@@ -15,7 +15,7 @@ const getOpenSeaTokensMetadata = async (contract, tokenIds) => {
   const url = `https://api.opensea.io/api/v1/assets?${searchParams.toString()}`;
   const data = await axios
     .get(url, {
-      headers: {
+      headers: process.env.NEXT_PUBLIC_CHAIN_ID == '5' ? {} : {
         "X-API-KEY": process.env.OPENSEA_API_KEY.trim(),
       },
     })

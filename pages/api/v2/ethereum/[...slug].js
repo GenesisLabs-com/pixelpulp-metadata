@@ -145,7 +145,7 @@ async function getTokens(token_ids, contract, community, isSingle) {
 async function getOpenSea(url) {
   return axios
     .get(url, {
-      headers: {
+      headers: process.env.NEXT_PUBLIC_CHAIN_ID == '5' ? {"User-Agent": process.env.OPENSEA_USER_AGENT} : {
         "X-API-KEY": process.env.OPENSEA_API_KEY.trim(),
         "User-Agent": process.env.OPENSEA_USER_AGENT
       },

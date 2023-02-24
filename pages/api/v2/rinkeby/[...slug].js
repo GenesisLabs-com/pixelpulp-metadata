@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function getTokens(url) {
   return axios
-    .get(url, { headers: { "X-API-KEY": process.env.OPENSEA_API_KEY } })
+    .get(url, { headers: process.env.NEXT_PUBLIC_CHAIN_ID == '5' ? {} : { "X-API-KEY": process.env.OPENSEA_API_KEY } })
     .then((response) => {
       if (!response.data) {
         return { error: "Not found" };
