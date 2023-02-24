@@ -3,7 +3,7 @@ import axios from "axios";
 import { extendCollectionMetadata } from "../../../../src/extend";
 
 const getOpenSeaCollection = async (contract) => {
-  const url = `https://rinkeby-api.opensea.io/api/v1/asset_contract/${contract}`;
+  const url = `https://testnets-api.opensea.io/api/v1/asset_contract/${contract}`;
   const { data } = await axios.get(url);
 
   if (!data.collection) {

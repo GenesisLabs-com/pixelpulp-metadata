@@ -60,7 +60,7 @@ export default async function handler(req, res) {
   }
   const base =
     process.env.NEXT_PUBLIC_CHAIN_ID == 4
-      ? "https://rinkeby-api.opensea.io/api/v1/assets"
+      ? "https://testnets-api.opensea.io/api/v1/assets"
       : process.env.NEXT_PUBLIC_CHAIN_ID == 5 ? "https://testnets-api.opensea.io/api/v1/assets" : "https://api.opensea.io/api/v1/assets";
   let url = `${base}?asset_contract_address=${contract}`;
   // Batch

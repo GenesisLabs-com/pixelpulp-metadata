@@ -12,7 +12,7 @@ const getOpenSeaTokensMetadata = async (contract, tokenIds) => {
     searchParams.append("token_ids", tokenId);
   }
 
-  const url = `https://rinkeby-api.opensea.io/api/v1/assets?${searchParams.toString()}`;
+  const url = `https://testnets-api.opensea.io/api/v1/assets?${searchParams.toString()}`;
   const data = await axios.get(url).then((response) => response.data);
 
   const metadata = [];

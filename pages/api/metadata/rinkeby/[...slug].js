@@ -46,7 +46,7 @@ export default async function handler(req, res) {
       community = "cryptovoxels";
       break;
   }
-  const base = "https://rinkeby-api.opensea.io/api/v1/assets";
+  const base = "https://testnets-api.opensea.io/api/v1/assets";
   let url = `${base}?asset_contract_address=${contract}`;
   // Batch
   if (req.query.token_ids) {
